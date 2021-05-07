@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}} {{1+1}} {{info.a}} {{ {} }} {{flag?1:2}}
+        {{ (function() {return 100})() }}
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                info: {},
+                flag: true
+            },
+            methods: {}
+        });
+
+        vm.$watch('msg', function (newValue, oldValue) {
+            console.log(newValue, oldValue);
+        })
+
+        vm.msg = 'nihao';
+        vm.msg = 'hi';
+        // vm.$nextTick(function () {
+        //     console.log(vm.$el.innerHTML);
+        // })
+
+    </script>
+</body>
+
+</html>
