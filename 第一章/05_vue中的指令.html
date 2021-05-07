@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <template v-for="(item,index) in arr">
+        <li :key="index +'_1'">{{item}} {{index}}</li>
+        <li :key="`${index}_2`">{{item}} {{index}}</li>
+      </template>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          arr: [1, 2, 3],
+        },
+      })
+    </script>
+  </body>
+</html>
